@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TALEFF — Contame de tu negocio</title>
+<meta name="description" content="10 preguntas, 3 minutos. Con esto te armo una propuesta a medida con precio cerrado.">
+<meta name="robots" content="noindex">
+<meta property="og:type" content="website">
+<meta property="og:title" content="TALEFF — Contame de tu negocio">
+<meta property="og:description" content="10 preguntas, 3 minutos. Con esto te armo una propuesta con precio cerrado.">
+<meta property="og:image" content="https://juanitota897.github.io/og.png">
+<meta name="theme-color" content="#070b14">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23070b14'/%3E%3Ctext x='32' y='44' font-family='Arial,sans-serif' font-size='36' font-weight='700' fill='%23a78bfa' text-anchor='middle'%3ET%3C/text%3E%3Ccircle cx='48' cy='46' r='5' fill='%2325d366'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#070b14;--card:rgba(255,255,255,.045);--line:rgba(255,255,255,.09);--ink:#eef2f8;--mut:#9aa6b8;--wa:#25d366;--vio:#8b5cf6;--vio2:#a78bfa}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font:16px/1.6 Inter,-apple-system,sans-serif;overflow-x:hidden}
+h1,h2{font-family:"Space Grotesk",Inter,sans-serif;letter-spacing:-.5px}
+.glow{position:fixed;border-radius:50%;filter:blur(120px);opacity:.14;pointer-events:none}
+.g1{width:500px;height:500px;background:var(--vio);top:-160px;right:-120px}
+.wrap{max-width:640px;margin:0 auto;padding:36px 20px 80px;position:relative;z-index:1}
+.logo{font-family:"Space Grotesk";font-weight:700;font-size:19px;letter-spacing:2px;margin-bottom:30px}
+.logo span{color:var(--vio2)}
+.logo a{color:inherit;text-decoration:none}
+h1{font-size:clamp(26px,5vw,36px);margin-bottom:12px}
+.sub{color:var(--mut);margin-bottom:34px;font-size:16px}
+.sub b{color:var(--wa)}
+.q{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;margin-bottom:14px}
+.q h2{font-size:16.5px;margin-bottom:4px}
+.q .ayuda{font-size:13px;color:var(--mut);margin-bottom:12px}
+.q .req{color:var(--vio2)}
+input[type=text],textarea{width:100%;background:#0d1424;border:1px solid var(--line);border-radius:11px;padding:12px 14px;font:inherit;color:var(--ink)}
+input[type=text]:focus,textarea:focus{outline:none;border-color:var(--vio)}
+textarea{min-height:90px;resize:vertical}
+.opts{display:flex;flex-direction:column;gap:8px}
+.opt{display:flex;align-items:flex-start;gap:11px;background:#0d1424;border:1px solid var(--line);border-radius:11px;padding:12px 14px;cursor:pointer;transition:border-color .12s}
+.opt:hover{border-color:rgba(139,92,246,.45)}
+.opt input{margin-top:4px;accent-color:var(--vio);width:16px;height:16px;flex-shrink:0}
+.opt span{font-size:14.5px}
+.opt small{display:block;color:var(--mut);font-size:12.5px}
+.enviar{position:sticky;bottom:14px;margin-top:26px}
+.btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;border:0;border-radius:14px;padding:17px;font-weight:700;font-size:16.5px;cursor:pointer;background:var(--wa);color:#06270f;box-shadow:0 10px 40px rgba(37,211,102,.35);font-family:Inter}
+.btn:hover{transform:translateY(-1px)}
+.waicon{width:21px;height:21px}
+.err{color:#fca5a5;font-size:13.5px;text-align:center;margin-top:10px;display:none}
+.nota{text-align:center;color:var(--mut);font-size:13px;margin-top:14px}
+.progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--wa),var(--vio));width:0%;transition:width .3s;z-index:9}
+</style>
+</head>
+<body>
+<div class="progress" id="prog"></div>
+<div class="glow g1"></div>
+<div class="wrap">
+  <div class="logo"><a href="index.html">TALEFF<span>.</span></a></div>
+  <h1>Contame de tu negocio</h1>
+  <p class="sub">10 preguntas, <b>3 minutos</b>. Con esto te armo una propuesta a medida con precio cerrado en 24 hs. Al final tocás un botón y me llega todo directo al WhatsApp.</p>
+
+  <div class="q">
+    <h2>Tu nombre <span class="req">*</span></h2>
+    <div class="ayuda">¿Cómo te llamo?</div>
+    <input type="text" id="f-nombre" placeholder="Carlos">
+  </div>
+
+  <div class="q">
+    <h2>Tu negocio <span class="req">*</span></h2>
+    <div class="ayuda">Nombre y a qué se dedica</div>
+    <input type="text" id="f-negocio" placeholder="Ferretería El Tornillo — venta minorista y a obras">
+  </div>
+
+  <div class="q">
+    <h2>¿Qué te está comiendo más tiempo (o haciendo perder plata) hoy?</h2>
+    <div class="ayuda">Con tus palabras, como se lo contarías a un amigo</div>
+    <textarea id="f-dolor" placeholder="Ej: pierdo ventas porque no llego a contestar el WhatsApp, y los presupuestos me los piden de a 10 por día..."></textarea>
+  </div>
+
+  <div class="q">
+    <h2>¿Qué te interesa?</h2>
+    <div class="ayuda">Marcá todo lo que aplique — si no sabés, marcá la última</div>
+    <div class="opts" id="f-interes">
+      <label class="opt"><input type="checkbox" value="Bot de WhatsApp (atención y ventas)"><span>Bot de WhatsApp que atienda y venda solo</span></label>
+      <label class="opt"><input type="checkbox" value="Turnos y reservas"><span>Turnos y reservas automáticas</span></label>
+      <label class="opt"><input type="checkbox" value="Recordatorios y cobranzas"><span>Recordatorios y cobranzas automáticas</span></label>
+      <label class="opt"><input type="checkbox" value="Reportes automáticos"><span>Reportes automáticos del negocio</span></label>
+      <label class="opt"><input type="checkbox" value="Presupuestos automáticos"><span>Presupuestos que se arman solos</span></label>
+      <label class="opt"><input type="checkbox" value="Recuperador de ventas"><span>Recuperar a los que preguntaron y no compraron</span></label>
+      <label class="opt"><input type="checkbox" value="Control de stock"><span>Control de stock con alertas</span></label>
+      <label class="opt"><input type="checkbox" value="Carga por foto (OCR)"><span>Cargar remitos y facturas sacándoles una foto</span></label>
+      <label class="opt"><input type="checkbox" value="Reseñas automáticas"><span>Juntar reseñas de Google en automático</span></label>
+      <label class="opt"><input type="checkbox" value="App a medida / dashboard"><span>App a medida o tablero con los números del negocio</span></label>
+      <label class="opt"><input type="checkbox" value="Conectar sistemas"><span>Conectar sistemas que no se hablan (Excel, Tango, TiendaNube...)</span></label>
+      <label class="opt"><input type="checkbox" value="Capacitación IA"><span>Capacitar a mi equipo en IA</span></label>
+      <label class="opt"><input type="checkbox" value="No sé — que me asesoren"><span>No sé bien — contame qué le serviría a mi negocio</span></label>
+    </div>
+  </div>
+
+  <div class="q">
+    <h2>Eso que te molesta, ¿cómo lo manejan hoy?</h2>
+    <div class="opts" id="f-hoy">
+      <label class="opt"><input type="radio" name="hoy" value="Todo a mano / de memoria"><span>Todo a mano o de memoria</span></label>
+      <label class="opt"><input type="radio" name="hoy" value="Excel o planillas"><span>Excel o planillas</span></label>
+      <label class="opt"><input type="radio" name="hoy" value="Un sistema"><span>Tenemos un sistema<small>contame cuál en la última pregunta</small></span></label>
+      <label class="opt"><input type="radio" name="hoy" value="No se hace, se pierde"><span>Directamente no se hace — y se pierde plata</span></label>
+    </div>
+  </div>
+
+  <div class="q">
+    <h2>¿Qué herramientas usan hoy?</h2>
+    <div class="ayuda">Marcá todas las que usen</div>
+    <div class="opts" id="f-herr">
+      <label class="opt"><input type="checkbox" value="WhatsApp común"><span>WhatsApp común</span></label>
+      <label class="opt"><input type="checkbox" value="WhatsApp Business"><span>WhatsApp Business</span></label>
+      <label class="opt"><input type="checkbox" value="Excel / Google Sheets"><span>Excel / Google Sheets</span></label>
+      <label class="opt"><input type="checkbox" value="Sistema de gestión (Tango u otro)"><span>Sistema de gestión (Tango u otro)</span></label>
+      <label class="opt"><input type="checkbox" value="MercadoLibre / TiendaNube"><span>MercadoLibre / TiendaNube</span></label>
+      <label class="opt"><input type="checkbox" value="Instagram / redes"><span>Instagram / redes</span></label>
+    </div>
+  </div>
+
+  <div class="q">
+    <h2>¿Cuántas consultas o ventas mueven por día, más o menos?</h2>
+    <div class="opts" id="f-vol">
+      <label class="opt"><input type="radio" name="vol" value="Menos de 10"><span>Menos de 10</span></label>
+      <label class="opt"><input type="radio" name="vol" value="Entre 10 y 50"><span>Entre 10 y 50</span></label>
+      <label class="opt"><input type="radio" name="vol" value="Entre 50 y 200"><span>Entre 50 y 200</span></label>
+      <label class="opt"><input type="radio" name="vol" value="Más de 200"><span>Más de 200</span></label>
+    </div>
+  </div>
+
+  <div class="q">
+    <h2>¿Cuántas personas trabajan en el negocio?</h2>
+    <div class="opts" id="f-eq">
+      <label class="opt"><input type="radio" name="eq" value="Solo yo"><span>Solo yo</span></label>
+      <label class="opt"><input type="radio" name="eq" value="2 a 5"><span>2 a 5</span></label>
+      <label class="opt"><input type="radio" name="eq" value="6 a 20"><span>6 a 20</span></label>
+      <label class="opt"><input type="radio" name="eq" value="Más de 20"><span>Más de 20</span></label>
+    </div>
+  </div>
+
+  <div class="q">
+    <h2>¿Para cuándo lo necesitás?</h2>
+    <div class="opts" id="f-urg">
+      <label class="opt"><input type="radio" name="urg" value="Para ayer"><span>Para ayer 🔥</span></label>
+      <label class="opt"><input type="radio" name="urg" value="Este mes"><span>Este mes</span></label>
+      <label class="opt"><input type="radio" name="urg" value="Próximos meses"><span>En los próximos meses</span></label>
+      <label class="opt"><input type="radio" name="urg" value="Explorando"><span>Estoy explorando, sin apuro</span></label>
+    </div>
+  </div>
+
+  <div class="q">
+    <h2>¿Tenés un presupuesto en mente?</h2>
+    <div class="ayuda">Opcional — me ayuda a proponerte algo que te cierre de entrada</div>
+    <div class="opts" id="f-pres">
+      <label class="opt"><input type="radio" name="pres" value="Hasta USD 500"><span>Hasta USD 500</span></label>
+      <label class="opt"><input type="radio" name="pres" value="USD 500 a 1.500"><span>USD 500 a 1.500</span></label>
+      <label class="opt"><input type="radio" name="pres" value="USD 1.500 a 3.000"><span>USD 1.500 a 3.000</span></label>
+      <label class="opt"><input type="radio" name="pres" value="Más de USD 3.000"><span>Más de USD 3.000</span></label>
+      <label class="opt"><input type="radio" name="pres" value="Todavía no sé"><span>Todavía no sé — pasame opciones</span></label>
+    </div>
+  </div>
+
+  <div class="q">
+    <h2>¿Algo más que quieras contarme?</h2>
+    <div class="ayuda">Qué sistema usan, links de tu negocio, lo que sea</div>
+    <textarea id="f-extra" placeholder="Ej: usamos Tango. Mi instagram es @eltornillo..."></textarea>
+  </div>
+
+  <div class="enviar">
+    <button class="btn" id="btn-enviar">
+      <svg class="waicon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm5.4 14.1c-.2.7-1.3 1.3-1.9 1.4-.5.1-1.1.2-3.6-.8-3-1.2-4.9-4.3-5.1-4.5-.1-.2-1.2-1.6-1.2-3.1s.8-2.2 1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5s.8 1.9.8 2-.1.4-.2.5l-.4.6c-.1.2-.3.3-.1.6.2.3.8 1.4 1.8 2.2 1.2 1.1 2.3 1.4 2.6 1.6.3.1.5.1.7-.1s.8-.9 1-1.2c.2-.3.4-.3.7-.2l2.2 1c.3.1.5.2.6.4 0 .1 0 .7-.3 1.5z"/></svg>
+      Mandarle esto a Juani por WhatsApp
+    </button>
+    <div class="err" id="err">Me falta tu nombre y el nombre de tu negocio (las dos primeras preguntas) 🙏</div>
+    <div class="nota">Se abre tu WhatsApp con las respuestas ya escritas — solo apretás enviar.</div>
+  </div>
+</div>
+
+<script>
+var WHATSAPP = "5491125072706";
+
+function val(id){ return (document.getElementById(id).value||"").trim(); }
+function radios(name){ var r=document.querySelector('input[name="'+name+'"]:checked'); return r?r.value:"—"; }
+function checks(id){
+  var v=[]; document.querySelectorAll("#"+id+" input:checked").forEach(function(c){v.push(c.value);});
+  return v.length?v.join(", "):"—";
+}
+document.getElementById("btn-enviar").onclick=function(){
+  var nombre=val("f-nombre"), negocio=val("f-negocio");
+  var err=document.getElementById("err");
+  if(!nombre||!negocio){ err.style.display="block"; window.scrollTo({top:0,behavior:"smooth"}); return; }
+  err.style.display="none";
+  var msg="🧾 BRIEF TALEFF\n"+
+    "👤 Soy: "+nombre+"\n"+
+    "🏪 Negocio: "+negocio+"\n"+
+    "⏱ Lo que más me cuesta hoy: "+(val("f-dolor")||"—")+"\n"+
+    "🎯 Me interesa: "+checks("f-interes")+"\n"+
+    "🛠 Hoy lo manejamos: "+radios("hoy")+"\n"+
+    "🔧 Herramientas: "+checks("f-herr")+"\n"+
+    "📈 Volumen diario: "+radios("vol")+"\n"+
+    "👥 Equipo: "+radios("eq")+"\n"+
+    "🗓 Urgencia: "+radios("urg")+"\n"+
+    "💵 Presupuesto: "+radios("pres")+"\n"+
+    "➕ Extra: "+(val("f-extra")||"—");
+  window.open("https://wa.me/"+WHATSAPP+"?text="+encodeURIComponent(msg),"_blank");
+};
+
+/* barra de progreso según scroll */
+window.addEventListener("scroll",function(){
+  var h=document.documentElement;
+  var p=h.scrollTop/(h.scrollHeight-h.clientHeight)*100;
+  document.getElementById("prog").style.width=p+"%";
+});
+</script>
+</body>
+</html>
