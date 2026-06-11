@@ -38,7 +38,8 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Inter:wght@400;600;700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Inter:wght@400;600;700&display=swap"></noscript>
 <style>
 :root{
   --bg:#070b14; --bg2:#0b1120; --card:rgba(255,255,255,.045); --line:rgba(255,255,255,.09);
@@ -144,6 +145,8 @@ section{padding:64px 0}
 .svc p{color:var(--mut);font-size:13.8px;flex:1}
 .svc .vermas{margin-top:14px;font-weight:700;color:var(--vio2);font-size:13.5px}
 .svc:hover .vermas{text-decoration:underline}
+.svc-para{margin-top:10px;font-size:12.5px;color:#7c8aa0;border-top:1px dashed var(--line);padding-top:9px}
+.svc-para b{color:var(--mut);font-weight:600}
 
 /* modal servicio */
 .modal-bg{position:fixed;inset:0;background:rgba(4,7,13,.78);backdrop-filter:blur(6px);z-index:80;display:flex;align-items:center;justify-content:center;padding:18px;opacity:0;pointer-events:none;transition:opacity .2s}
@@ -153,6 +156,7 @@ section{padding:64px 0}
 .modal .x{position:absolute;top:14px;right:16px;background:var(--card);border:1px solid var(--line);color:var(--mut);width:34px;height:34px;border-radius:10px;font-size:17px;cursor:pointer}
 .modal .ico{font-size:34px;margin-bottom:10px}
 .modal h3{font-size:22px;margin-bottom:12px;padding-right:40px}
+.modal .para-chip{display:inline-block;background:rgba(139,92,246,.12);border:1px solid rgba(139,92,246,.3);color:var(--vio2);border-radius:999px;padding:5px 14px;font-size:13px;font-weight:600;margin-bottom:14px}
 .modal .det{color:var(--mut);font-size:15px;margin-bottom:18px}
 .modal .ejemplo{background:rgba(37,211,102,.07);border:1px solid rgba(37,211,102,.25);border-left:3px solid var(--wa);border-radius:12px;padding:14px 16px;margin-bottom:22px}
 .modal .ejemplo b{display:block;color:var(--wa);font-size:12px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px}
@@ -207,6 +211,12 @@ footer{padding:34px 0;text-align:center;color:#5b6b80;font-size:13px}
 
 .reveal{opacity:0;transform:translateY(18px);transition:all .6s ease}
 .reveal.on{opacity:1;transform:none}
+
+/* performance: lo de abajo del fold no se renderiza hasta que hace falta */
+#portfolio,#proceso,#faq,.final{content-visibility:auto;contain-intrinsic-size:1px 700px}
+@media(max-width:760px){
+  .glow{filter:blur(60px);opacity:.10}
+}
 
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
@@ -416,6 +426,7 @@ footer{padding:34px 0;text-align:center;color:#5b6b80;font-size:13px}
     <button class="x" id="mod-x" aria-label="Cerrar">✕</button>
     <div class="ico" id="mod-ico">💬</div>
     <h3 id="mod-tit"></h3>
+    <div class="para-chip" id="mod-para"></div>
     <p class="det" id="mod-det"></p>
     <div class="ejemplo"><b>Ejemplo real</b><p id="mod-ej"></p></div>
     <a class="btn btn-wa" id="mod-wa" href="#" target="_blank" rel="noopener" style="width:100%;justify-content:center">
@@ -468,13 +479,13 @@ var CAT = [
   {i:"🖥",t:"App interna a medida",d:"Pedidos, producción, logística, lo que tu negocio necesite. Con usuarios y permisos.",
    det:"Cuando el Excel compartido ya no da más: una app web hecha exactamente para tu operación, con usuarios y permisos por rol, carga simple desde el celular y reportes. Hosting y puesta en marcha incluidos. Ya construí tres sistemas así — los ves acá abajo en esta página.",
    ej:"Una fábrica chica: los pedidos entran, pasan a producción con su estado (en cola → en proceso → listo) y el cliente recibe aviso automático cuando puede retirar. Todo en una pantalla, sin papelitos ni gritos al taller."},
-  {i:"📈",t:"Dashboard del negocio",d:"Ventas, caja y ranking de productos en vivo, desde el celular.",
+  {i:"📈",t:"Tablero del negocio en vivo",d:"Ventas, caja y ranking de productos actualizados solos, en tu celular.",
    det:"Una pantalla con los números que importan, actualizados solos: ventas del día y del mes, caja, ranking de productos, comparación contra el mes pasado. Pensado para dueños: claro, sin vueltas, desde el celular.",
    ej:"Estás de viaje y abrís el celu: «Hoy $312.400 · semana +8% · el local de Belgrano flojo, el de Caballito récord». Decidís con números, no con sensaciones ni con «más o menos bien»."},
   {i:"🔌",t:"Conectar sistemas que no se hablan",d:"Tango, Excel, MercadoLibre, Tienda Nube: que los datos pasen solos, sin copiar a mano.",
    det:"Si alguien en tu negocio copia datos de un lado a otro (de MercadoLibre al Excel, del Excel al sistema de gestión), eso se puede automatizar. Conecto los sistemas que ya tenés para que la información fluya sola y sin errores de tipeo. Con sistemas de escritorio tipo Tango soy honesto: primero lo reviso sin cargo y te confirmo qué se puede antes de cotizar.",
    ej:"Vendés en Tienda Nube: la venta descuenta el stock, se registra en tu planilla de caja y queda lista para facturar — sola. La persona que «pasaba las ventas» los lunes ahora hace algo útil."},
-  {i:"📸",t:"Carga por foto (OCR + IA)",d:"Sacás foto al remito o factura y se carga solo al sistema. Adiós tipeo.",
+  {i:"📸",t:"Carga por foto",d:"Le sacás una foto al remito o factura y se carga sola al sistema. Adiós tipeo.",
    det:"Le sacás una foto al remito, factura o ticket y la IA lee todos los renglones (producto, cantidad, precio) y los carga al sistema o planilla. Detecta errores y te pide confirmación solo cuando duda.",
    ej:"Llega el proveedor con un remito de 40 renglones. Foto → 10 segundos → cargado. Lo que eran 45 minutos de tipeo (con errores) ahora es sacar una foto."},
   {i:"⭐",t:"Reseñas en automático",d:"Encuesta post-venta y pedido de reseña en Google a los clientes contentos.",
@@ -484,8 +495,25 @@ var CAT = [
    det:"Tres horas, en tu negocio o por videollamada, con casos reales de TU rubro: responder consultas, armar presupuestos, redactar publicaciones, resumir reuniones, analizar números. Nada de teoría: cada uno sale con la IA configurada y andando en su compu.",
    ej:"Un estudio de 5 personas: a la tarde ya respondían mails con IA, armaban informes en 10 minutos y tenían 3 automatizaciones identificadas para el mes siguiente. El workshop se paga solo con las horas que ahorra la primera semana."}
 ];
+/* Para quién es cada servicio — visible en la tarjeta, sin clicks */
+var PARA = [
+  "tiendas, locales con Instagram, todo el que vende por WhatsApp",
+  "peluquerías, estética, consultorios, canchas",
+  "gimnasios, institutos, clubes, todo el que cobra cuotas",
+  "dueños con empleados o más de un local",
+  "pintores, herreros, instaladores, talleres, imprentas",
+  "todo el que recibe consultas que no siempre cierran",
+  "almacenes, dietéticas, forrajerías, pet shops",
+  "estudios contables",
+  "fábricas chicas, distribuidoras, talleres con pedidos",
+  "dueños que quieren decidir con números, no con sensaciones",
+  "tiendas online que pasan datos a mano entre sistemas",
+  "los que tipean remitos y facturas de proveedores",
+  "gastronomía, estética, talleres, alojamientos",
+  "equipos de oficina, estudios, inmobiliarias"
+];
 document.getElementById("catalogo").innerHTML = CAT.map(function(c,ix){
-  return '<div class="svc reveal" data-ix="'+ix+'"><div class="ico">'+c.i+'</div><h3>'+c.t+'</h3><p>'+c.d+'</p><div class="vermas">Ver detalle y ejemplo →</div></div>';
+  return '<div class="svc reveal" data-ix="'+ix+'"><div class="ico">'+c.i+'</div><h3>'+c.t+'</h3><p>'+c.d+'</p><div class="svc-para"><b>Para:</b> '+PARA[ix]+'</div><div class="vermas">Ver detalle y ejemplo →</div></div>';
 }).join("");
 document.querySelectorAll(".svc").forEach(function(el){
   el.addEventListener("click",function(){ abrirModal(Number(el.dataset.ix)); });
@@ -496,6 +524,7 @@ function abrirModal(ix){
   var c=CAT[ix]; if(!c)return;
   document.getElementById("mod-ico").textContent=c.i;
   document.getElementById("mod-tit").textContent=c.t;
+  document.getElementById("mod-para").textContent="Para: "+PARA[ix];
   document.getElementById("mod-det").textContent=c.det;
   document.getElementById("mod-ej").textContent=c.ej;
   var wa=document.getElementById("mod-wa");
