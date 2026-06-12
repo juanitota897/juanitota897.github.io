@@ -540,6 +540,18 @@ document.getElementById("modal-bg").addEventListener("click",function(e){ if(e.t
 document.getElementById("mod-x").addEventListener("click",cerrarModal);
 document.addEventListener("keydown",function(e){ if(e.key==="Escape")cerrarModal(); });
 
+/* deep-link por servicio: juanitota897.github.io/?s=3 abre el modal del servicio 3 (para mensajes de venta) */
+(function(){
+  var s=new URLSearchParams(location.search).get("s");
+  var ix=parseInt(s,10)-1;
+  if(s && CAT[ix]){
+    setTimeout(function(){
+      try{ document.getElementById("servicios").scrollIntoView(); }catch(_e){}
+      abrirModal(ix);
+    },350);
+  }
+})();
+
 /* ===== demo bot ===== */
 var FLOWS = {
   gym: { av:"AG", nm:"Atlas Gym", start:{
