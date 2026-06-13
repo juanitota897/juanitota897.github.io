@@ -10,45 +10,47 @@
 <meta property="og:title" content="TALEFF — Contame de tu negocio">
 <meta property="og:description" content="10 preguntas, 3 minutos. Con esto te armo una propuesta con precio cerrado.">
 <meta property="og:image" content="https://juanitota897.github.io/og.png">
-<meta name="theme-color" content="#070b14">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23070b14'/%3E%3Ctext x='32' y='44' font-family='Arial,sans-serif' font-size='36' font-weight='700' fill='%23a78bfa' text-anchor='middle'%3ET%3C/text%3E%3Ccircle cx='48' cy='46' r='5' fill='%2325d366'/%3E%3C/svg%3E">
+<meta name="theme-color" content="#f7f6f0">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231c1a17'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' font-weight='700' fill='%23f4efe6' text-anchor='middle'%3ET%3C/text%3E%3Ccircle cx='49' cy='47' r='5' fill='%23c5402a'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#070b14;--card:rgba(255,255,255,.045);--line:rgba(255,255,255,.09);--ink:#eef2f8;--mut:#9aa6b8;--wa:#25d366;--vio:#8b5cf6;--vio2:#a78bfa}
+:root{--bg:#f7f6f0;--warm:#e3ece1;--card:#ffffff;--line:rgba(31,36,32,.10);--ink:#1f2420;--mut:#6e6a62;--wa:#16a34a;--acc:#16a34a;--acc-dk:#0f7f39;--acc-soft:#e6f6ec}
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--ink);font:16px/1.6 Inter,-apple-system,sans-serif;overflow-x:hidden}
-h1,h2{font-family:"Space Grotesk",Inter,sans-serif;letter-spacing:-.5px}
-.glow{position:fixed;border-radius:50%;filter:blur(120px);opacity:.14;pointer-events:none}
-.g1{width:500px;height:500px;background:var(--vio);top:-160px;right:-120px}
-.wrap{max-width:640px;margin:0 auto;padding:36px 20px 80px;position:relative;z-index:1}
-.logo{font-family:"Space Grotesk";font-weight:700;font-size:19px;letter-spacing:2px;margin-bottom:30px}
-.logo span{color:var(--vio2)}
+body{background:var(--bg);color:var(--ink);font:16px/1.65 Inter,-apple-system,BlinkMacSystemFont,sans-serif;overflow-x:hidden;position:relative}
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(125% 85% at 50% 0%, #fcfcf8 0%, var(--bg) 42%, var(--warm) 100%)}
+h1,h2{font-family:"Plus Jakarta Sans",Inter,sans-serif;font-weight:800;letter-spacing:-.02em;line-height:1.08}
+.glow{display:none}
+.wrap{max-width:640px;margin:0 auto;padding:30px 20px 90px;position:relative;z-index:1}
+.logo{font-family:"Plus Jakarta Sans";font-weight:800;font-size:21px;letter-spacing:-.01em;margin-bottom:26px}
+.logo span{color:var(--acc)}
 .logo a{color:inherit;text-decoration:none}
-h1{font-size:clamp(26px,5vw,36px);margin-bottom:12px}
-.sub{color:var(--mut);margin-bottom:34px;font-size:16px}
-.sub b{color:var(--wa)}
-.q{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;margin-bottom:14px}
+h1{font-size:clamp(26px,5vw,38px);margin-bottom:12px}
+.sub{color:var(--mut);margin-bottom:30px;font-size:16px}
+.sub b{color:var(--acc-dk)}
+.q{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;margin-bottom:14px;box-shadow:0 4px 16px rgba(31,36,32,.05)}
 .q h2{font-size:16.5px;margin-bottom:4px}
 .q .ayuda{font-size:13px;color:var(--mut);margin-bottom:12px}
-.q .req{color:var(--vio2)}
-input[type=text],textarea{width:100%;background:#0d1424;border:1px solid var(--line);border-radius:11px;padding:12px 14px;font:inherit;color:var(--ink)}
-input[type=text]:focus,textarea:focus{outline:none;border-color:var(--vio)}
+.q .req{color:var(--acc)}
+input[type=text],textarea{width:100%;background:#fbfbf8;border:1px solid var(--line);border-radius:11px;padding:12px 14px;font:inherit;color:var(--ink)}
+input[type=text]::placeholder,textarea::placeholder{color:#a8a49b}
+input[type=text]:focus,textarea:focus{outline:none;border-color:var(--acc);box-shadow:0 0 0 3px var(--acc-soft)}
 textarea{min-height:90px;resize:vertical}
 .opts{display:flex;flex-direction:column;gap:8px}
-.opt{display:flex;align-items:flex-start;gap:11px;background:#0d1424;border:1px solid var(--line);border-radius:11px;padding:12px 14px;cursor:pointer;transition:border-color .12s}
-.opt:hover{border-color:rgba(139,92,246,.45)}
-.opt input{margin-top:4px;accent-color:var(--vio);width:16px;height:16px;flex-shrink:0}
+.opt{display:flex;align-items:flex-start;gap:11px;background:#fbfbf8;border:1px solid var(--line);border-radius:11px;padding:12px 14px;cursor:pointer;transition:border-color .12s,background .12s}
+.opt:hover{border-color:rgba(22,163,74,.45)}
+.opt input{margin-top:4px;accent-color:var(--acc);width:16px;height:16px;flex-shrink:0}
 .opt span{font-size:14.5px}
 .opt small{display:block;color:var(--mut);font-size:12.5px}
+.opt.pre{border-color:var(--acc);background:var(--acc-soft)}
 .enviar{position:sticky;bottom:14px;margin-top:26px}
-.btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;border:0;border-radius:14px;padding:17px;font-weight:700;font-size:16.5px;cursor:pointer;background:var(--wa);color:#06270f;box-shadow:0 10px 40px rgba(37,211,102,.35);font-family:Inter}
+.btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;border:0;border-radius:14px;padding:17px;font-weight:800;font-size:16.5px;cursor:pointer;background:var(--wa);color:#fff;box-shadow:0 12px 30px -6px rgba(22,163,74,.5);font-family:"Plus Jakarta Sans"}
 .btn:hover{transform:translateY(-1px)}
 .waicon{width:21px;height:21px}
-.err{color:#fca5a5;font-size:13.5px;text-align:center;margin-top:10px;display:none}
+.err{color:#c0392b;font-size:13.5px;text-align:center;margin-top:10px;display:none}
 .nota{text-align:center;color:var(--mut);font-size:13px;margin-top:14px}
-.progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--wa),var(--vio));width:0%;transition:width .3s;z-index:9}
+.progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--acc),var(--acc-dk));width:0%;transition:width .3s;z-index:9}
 </style>
 </head>
 <body>
@@ -180,6 +182,14 @@ textarea{min-height:90px;resize:vertical}
 
 <script>
 var WHATSAPP = "5491125072706";
+
+/* viene de la landing con un servicio elegido → lo dejamos pre-marcado */
+(function(){
+  var p=new URLSearchParams(location.search).get("int");
+  if(!p) return;
+  var box=document.querySelector('#f-interes input[value="'+p.replace(/"/g,'\\"')+'"]');
+  if(box){ box.checked=true; var op=box.closest(".opt"); if(op) op.classList.add("pre"); }
+})();
 
 function val(id){ return (document.getElementById(id).value||"").trim(); }
 function radios(name){ var r=document.querySelector('input[name="'+name+'"]:checked'); return r?r.value:"—"; }
