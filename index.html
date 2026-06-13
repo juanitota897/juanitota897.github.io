@@ -42,7 +42,7 @@
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap"></noscript>
 <style>
 :root{
-  --bg:#fdf6ed; --warm:#ffe1c4; --card:#ffffff; --line:rgba(31,36,32,.10);
+  --bg:#f7f6f0; --warm:#e3ece1; --card:#ffffff; --line:rgba(31,36,32,.10);
   --ink:#1f2420; --mut:#6e6a62; --acc:#16a34a; --acc-dk:#0f7f39; --acc-soft:#e6f6ec;
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -50,7 +50,7 @@ html{scroll-behavior:smooth;scroll-padding-top:96px}
 body{background:var(--bg);color:var(--ink);font:17px/1.65 "Plus Jakarta Sans",-apple-system,BlinkMacSystemFont,sans-serif;overflow-x:hidden;position:relative}
 /* degradé cálido a lo Talentum, abajo durazno + un respiro verde muy suave */
 body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
-  background:radial-gradient(120% 80% at 50% 0%, #fffaf4 0%, var(--bg) 38%, var(--warm) 100%)}
+  background:radial-gradient(125% 85% at 50% 0%, #fcfcf8 0%, var(--bg) 40%, var(--warm) 100%)}
 h1,h2,h3{font-family:"Plus Jakarta Sans",sans-serif;font-weight:800;letter-spacing:-.02em;line-height:1.05}
 a{color:inherit;text-decoration:none}
 .wrap{max-width:1100px;margin:0 auto;padding:0 24px}
@@ -139,7 +139,7 @@ section{padding:72px 0}
 .rep-line{background:var(--bg);border:1px solid var(--line);border-left:3px solid var(--acc);border-radius:12px;padding:11px 15px;margin-bottom:9px;font-size:14.5px;opacity:0;transform:translateY(8px);transition:all .4s;font-family:Inter}
 .rep-line.on{opacity:1;transform:none}
 .rep-line b{color:var(--ink);font-weight:700}
-.rep-line.warn{border-left-color:#e8852f}
+.rep-line.warn{border-left-color:#b06a3a}
 .rep-line.good{border-left-color:var(--acc)}
 
 /* catálogo — cards flotantes */
@@ -181,12 +181,13 @@ section{padding:72px 0}
 .pf-chip{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.08em;border-radius:999px;padding:5px 11px;background:var(--acc);color:#fff;margin-bottom:11px}
 .mock-dash{width:80%;display:flex;flex-direction:column;gap:6px}
 .mock-row{height:13px;border-radius:5px;background:rgba(31,36,32,.08)}
-.mock-row.red{background:rgba(232,133,47,.45);width:70%}
+.mock-row.red{background:rgba(176,84,64,.4);width:70%}
 .mock-row.green{background:rgba(22,163,74,.45);width:85%}
 .rings{position:relative;width:110px;height:110px}
 .ring{position:absolute;border-radius:50%;border:8px solid rgba(31,36,32,.06)}
 .r1{inset:0;border-top-color:var(--acc);border-right-color:var(--acc);transform:rotate(40deg)}
-.r2{inset:14px;border-top-color:#e8852f;border-right-color:#e8852f;transform:rotate(120deg)}
+
+.r2{inset:14px;border-top-color:#2f6f4f;border-right-color:#2f6f4f;transform:rotate(120deg)}
 .r3{inset:28px;border-top-color:var(--ink);transform:rotate(-50deg)}
 .mock-game{display:flex;gap:8px}
 .coin{width:34px;height:34px;border-radius:50%;background:var(--acc);display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:12px}
