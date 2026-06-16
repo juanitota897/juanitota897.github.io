@@ -33,7 +33,7 @@
   "areaServed": {"@type": "Country", "name": "Argentina"},
   "knowsLanguage": "es-AR",
   "priceRange": "$$",
-  "sameAs": ["https://wa.me/5491125072706"]
+  "sameAs": ["https://wa.me/5491172501403"]
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -290,13 +290,13 @@ footer a{color:var(--acc-dk);font-weight:600}
   <h1>Tu negocio atendiendo, vendiendo y reportando <em>solo</em>.</h1>
   <p>Bots de WhatsApp que responden y venden 24/7, reportes que llegan sin que toques nada, y apps a medida para lo que tu negocio necesite. Precio cerrado antes de arrancar.</p>
   <div class="heroctas">
-    <a class="btn btn-wa" href="brief.html">
+    <a class="btn btn-wa js-wa" href="#" target="_blank" rel="noopener">
       <svg class="waicon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm5.4 14.1c-.2.7-1.3 1.3-1.9 1.4-.5.1-1.1.2-3.6-.8-3-1.2-4.9-4.3-5.1-4.5-.1-.2-1.2-1.6-1.2-3.1s.8-2.2 1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5s.8 1.9.8 2-.1.4-.2.5l-.4.6c-.1.2-.3.3-.1.6.2.3.8 1.4 1.8 2.2 1.2 1.1 2.3 1.4 2.6 1.6.3.1.5.1.7-.1s.8-.9 1-1.2c.2-.3.4-.3.7-.2l2.2 1c.3.1.5.2.6.4 0 .1 0 .7-.3 1.5z"/></svg>
-      Armá tu propuesta · 3 min
+      🤖 Probá el bot en vivo
     </a>
-    <a class="btn btn-ghost" href="#demo">Ver la demo ↓</a>
+    <a class="btn btn-ghost" href="brief.html">Armá tu propuesta · 3 min</a>
   </div>
-  <p style="margin-top:15px;font-size:13.5px;color:var(--mut)">¿Ya sabés lo que querés? <a class="js-wa" href="#" target="_blank" rel="noopener" style="color:var(--acc-dk);font-weight:700">Escribime directo por WhatsApp →</a></p>
+  <p style="margin-top:15px;font-size:13.5px;color:var(--mut)">Le escribís al bot y te responde al toque, 24/7 · o <a href="#demo" style="color:var(--acc-dk);font-weight:700">mirá la demo simulada ↓</a></p>
   <div class="badges">
     <span>⚡ Andando en 7–14 días desde tus datos</span>
     <span>🔒 50% al arrancar, 50% cuando lo ves andando</span>
@@ -508,12 +508,12 @@ footer a{color:var(--acc-dk);font-weight:600}
 <section class="final">
   <div class="wrap reveal">
     <h2>Contame qué te come tiempo.<br>Te digo cuánto sale automatizarlo.</h2>
-    <p>15 minutos por WhatsApp. Si no te sirve, al menos te llevás una idea clara de qué se puede automatizar.</p>
-    <a class="btn btn-wa" href="brief.html">
+    <p>Escribile al bot ahora — te responde al toque, 24/7, y te deriva con una persona cuando hace falta.</p>
+    <a class="btn btn-wa js-wa" href="#" target="_blank" rel="noopener">
       <svg class="waicon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm5.4 14.1c-.2.7-1.3 1.3-1.9 1.4-.5.1-1.1.2-3.6-.8-3-1.2-4.9-4.3-5.1-4.5-.1-.2-1.2-1.6-1.2-3.1s.8-2.2 1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5s.8 1.9.8 2-.1.4-.2.5l-.4.6c-.1.2-.3.3-.1.6.2.3.8 1.4 1.8 2.2 1.2 1.1 2.3 1.4 2.6 1.6.3.1.5.1.7-.1s.8-.9 1-1.2c.2-.3.4-.3.7-.2l2.2 1c.3.1.5.2.6.4 0 .1 0 .7-.3 1.5z"/></svg>
-      Armá tu propuesta · 3 min
+      🤖 Probá el bot en vivo
     </a>
-    <p style="margin-top:14px;font-size:13px;opacity:.8">o <a class="js-wa" href="#" target="_blank" rel="noopener" style="font-weight:700;text-decoration:underline">escribime directo por WhatsApp</a></p>
+    <p style="margin-top:14px;font-size:13px;opacity:.8">o <a href="brief.html" style="font-weight:700;text-decoration:underline">armá tu propuesta en 3 min</a></p>
   </div>
 </section>
 </main>
@@ -543,8 +543,8 @@ footer a{color:var(--acc-dk);font-weight:600}
 
 <script>
 /* ===== CONFIG: poné tu número acá (formato internacional sin + ni espacios) ===== */
-var WHATSAPP = "5491125072706";
-var WA_TEXT = encodeURIComponent("Hola Juani! Vi taleff y quiero automatizar algo en mi negocio.");
+var WHATSAPP = "5491172501403";
+var WA_TEXT = encodeURIComponent("Hola! Vi TALEFF y quiero saber más para mi negocio.");
 
 document.querySelectorAll(".js-wa").forEach(function(a){
   a.href = "https://wa.me/" + WHATSAPP + "?text=" + WA_TEXT;
@@ -736,8 +736,8 @@ function mostrarOpts(opts,final){
   });
   if(final){
     var cta=document.createElement("button"); cta.className="cta-final";
-    cta.textContent="✨ Quiero un bot así para mi negocio";
-    cta.onclick=function(){ window.open("brief.html?int="+encodeURIComponent("Bot de WhatsApp (atención y ventas)"),"_blank"); };
+    cta.textContent="🤖 Probá el bot REAL en vivo";
+    cta.onclick=function(){ window.open("https://wa.me/"+WHATSAPP+"?text="+encodeURIComponent("Hola! Probé la demo en taleff y quiero ver el bot real para mi negocio."),"_blank"); };
     optsEl.appendChild(cta);
     var re=document.createElement("button"); re.textContent="↻ Probar de nuevo";
     re.onclick=function(){ iniciarFlow(curFlow); };
