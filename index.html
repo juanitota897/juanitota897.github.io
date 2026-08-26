@@ -33,7 +33,7 @@
   "areaServed": {"@type": "Country", "name": "Argentina"},
   "knowsLanguage": "es-AR",
   "priceRange": "$$",
-  "sameAs": ["https://wa.me/5491172501403"]
+  "sameAs": ["https://wa.me/5491125072706"]
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -69,6 +69,7 @@ nav.topnav .wrap{display:flex;align-items:center;justify-content:space-between;h
 @media(max-width:820px){.navlinks{display:none}}
 
 /* buttons — pastilla con sombra de color */
+[hidden]{display:none!important}
 .btn{display:inline-flex;align-items:center;gap:9px;border-radius:999px;padding:14px 26px;font-weight:700;font-size:15px;cursor:pointer;border:0;transition:transform .15s,box-shadow .2s,background .15s;font-family:"Plus Jakarta Sans"}
 .btn:hover{transform:translateY(-2px)}
 .btn:active{transform:translateY(0) scale(.99)}
@@ -131,7 +132,8 @@ section{padding:72px 0}
 .check{list-style:none;color:var(--ink);font-size:15.5px}
 .check li{padding-left:32px;position:relative;margin-bottom:13px;font-family:Inter}
 .check li:before{content:"✓";position:absolute;left:0;top:1px;width:21px;height:21px;background:var(--acc-soft);color:var(--acc-dk);border-radius:50%;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center}
-.notademo{font-size:11.5px;color:var(--mut);text-align:center;margin-top:12px;font-family:Inter}
+.notademo{font-size:13px;color:var(--ink);text-align:center;margin:0 auto 14px;font-family:Inter;background:var(--acc-soft);border:1px solid rgba(22,163,74,.35);border-radius:999px;padding:9px 18px;width:min(360px,92vw);line-height:1.45}
+.notademo b{font-weight:800}
 
 /* reporte demo */
 .rep-box{max-width:560px;margin:0 auto;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:26px;box-shadow:0 20px 50px -16px rgba(31,36,32,.18)}
@@ -153,6 +155,19 @@ section{padding:72px 0}
 .svc:hover .vermas{gap:9px}
 .svc-para{margin-top:12px;font-size:12.5px;color:var(--mut);border-top:1px dashed var(--line);padding-top:10px;font-family:Inter}
 .svc-para b{color:var(--ink);font-weight:700}
+.bot-hero{display:grid;grid-template-columns:1.2fr .8fr;gap:20px;align-items:stretch}
+.bot-hero-in,.bot-precio{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:28px;box-shadow:0 14px 38px -16px rgba(31,36,32,.18)}
+.bot-hero-in .ico{font-size:26px;width:50px;height:50px;background:var(--acc-soft);border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.bot-hero-in h3{font-size:21px;margin-bottom:10px;font-weight:700}
+.bot-hero-in p{color:var(--mut);font-size:15px;line-height:1.6;font-family:Inter;margin-bottom:18px}
+.bot-precio{border-color:var(--acc);text-align:center;display:flex;flex-direction:column;justify-content:center}
+.bot-precio-n{font-size:29px;font-weight:800;line-height:1.15}
+.bot-precio-n span{display:block;font-size:13px;font-weight:600;color:var(--mut);font-family:Inter;margin-top:2px}
+.bot-precio-mas{font-size:18px;font-weight:800;color:var(--acc);margin:8px 0}
+.bot-precio p{color:var(--mut);font-size:13.5px;font-family:Inter;margin:18px 0;line-height:1.55}
+.bot-precio .btn{width:100%;justify-content:center}
+.bot-precio-pie{margin-top:12px;font-size:12.5px;color:var(--mut);font-family:Inter}
+@media(max-width:820px){.bot-hero{grid-template-columns:1fr}}
 
 /* modal */
 .modal-bg{position:fixed;inset:0;background:rgba(31,36,32,.45);backdrop-filter:blur(4px);z-index:80;display:flex;align-items:center;justify-content:center;padding:18px;opacity:0;pointer-events:none;transition:opacity .2s}
@@ -274,7 +289,7 @@ footer a{color:var(--acc-dk);font-weight:600}
   <div class="wrap">
     <div class="logo">TALEFF<span>.</span></div>
     <div class="navlinks">
-      <a href="#demo">Demos</a><a href="#servicios">Servicios</a><a href="#portfolio">Lo que construí</a><a href="#proceso">Cómo trabajo</a><a href="#faq">FAQ</a>
+      <a href="#bot">Bot de WhatsApp</a><a href="#demo">Demos</a><a href="#servicios">Servicios</a><a href="#portfolio">Lo que construí</a><a href="#proceso">Cómo trabajo</a><a href="#faq">FAQ</a>
     </div>
     <a class="btn btn-wa btn-sm js-wa" href="#" target="_blank" rel="noopener">
       <svg class="waicon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm5.4 14.1c-.2.7-1.3 1.3-1.9 1.4-.5.1-1.1.2-3.6-.8-3-1.2-4.9-4.3-5.1-4.5-.1-.2-1.2-1.6-1.2-3.1s.8-2.2 1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5s.8 1.9.8 2-.1.4-.2.5l-.4.6c-.1.2-.3.3-.1.6.2.3.8 1.4 1.8 2.2 1.2 1.1 2.3 1.4 2.6 1.6.3.1.5.1.7-.1s.8-.9 1-1.2c.2-.3.4-.3.7-.2l2.2 1c.3.1.5.2.6.4 0 .1 0 .7-.3 1.5z"/></svg>
@@ -290,13 +305,13 @@ footer a{color:var(--acc-dk);font-weight:600}
   <h1>Tu negocio atendiendo, vendiendo y reportando <em>solo</em>.</h1>
   <p>Bots de WhatsApp que responden y venden 24/7, reportes que llegan sin que toques nada, y apps a medida para lo que tu negocio necesite. Precio cerrado antes de arrancar.</p>
   <div class="heroctas">
-    <a class="btn btn-wa js-wa" href="#" target="_blank" rel="noopener">
+    <a class="btn btn-wa js-wa" data-bot-vivo hidden href="#" target="_blank" rel="noopener">
       <svg class="waicon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm5.4 14.1c-.2.7-1.3 1.3-1.9 1.4-.5.1-1.1.2-3.6-.8-3-1.2-4.9-4.3-5.1-4.5-.1-.2-1.2-1.6-1.2-3.1s.8-2.2 1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5s.8 1.9.8 2-.1.4-.2.5l-.4.6c-.1.2-.3.3-.1.6.2.3.8 1.4 1.8 2.2 1.2 1.1 2.3 1.4 2.6 1.6.3.1.5.1.7-.1s.8-.9 1-1.2c.2-.3.4-.3.7-.2l2.2 1c.3.1.5.2.6.4 0 .1 0 .7-.3 1.5z"/></svg>
       🤖 Probá el bot en vivo
     </a>
-    <a class="btn btn-ghost" href="brief.html">Armá tu propuesta · 3 min</a>
+    <a class="btn btn-wa" data-cta-brief href="brief.html">Armá tu propuesta · 3 min</a>
   </div>
-  <p style="margin-top:15px;font-size:13.5px;color:var(--mut)">Le escribís al bot y te responde al toque, 24/7 · o <a href="#demo" style="color:var(--acc-dk);font-weight:700">mirá la demo simulada ↓</a></p>
+  <p style="margin-top:15px;font-size:13.5px;color:var(--mut)">Contame qué necesita tu negocio en 3 minutos y te paso la propuesta · o <a href="#demo" style="color:var(--acc-dk);font-weight:700">probá la demo del bot ↓</a></p>
   <div class="badges">
     <span>⚡ Andando en 7–14 días desde tus datos</span>
     <span>🔒 50% al arrancar, 50% cuando lo ves andando</span>
@@ -321,6 +336,7 @@ footer a{color:var(--acc-dk);font-weight:600}
     </div>
     <div class="demo-grid">
       <div class="reveal">
+        <div class="notademo">🧪 <b>Demo con datos de ejemplo.</b> Tu bot se entrena con la info real de tu negocio.</div>
         <div class="phone">
           <div class="phone-top">
             <div class="avatar" id="bot-av">AG</div>
@@ -329,7 +345,6 @@ footer a{color:var(--acc-dk);font-weight:600}
           <div class="chat" id="chat"></div>
           <div class="opts" id="opts"></div>
         </div>
-        <div class="notademo">* Demo con datos de ejemplo. Tu bot se entrena con la info real de tu negocio.</div>
       </div>
       <div class="demo-copy reveal">
         <h3>Esto mismo, con tu información, en tu WhatsApp.</h3>
@@ -345,23 +360,33 @@ footer a{color:var(--acc-dk);font-weight:600}
   </div>
 </section>
 
-<!-- DEMO REPORTE -->
-<section style="padding-top:0">
+<!-- PRODUCTO PRINCIPAL: BOT DE WHATSAPP -->
+<section id="bot">
   <div class="wrap">
     <div class="sec-h reveal">
-      <div class="tag">Demo interactiva</div>
-      <h2>Tu negocio en un mensaje, todos los días</h2>
-      <p>Imaginate esto llegándote a las 20:00, sin que nadie lo arme:</p>
+      <div class="tag">El producto principal</div>
+      <h2>Bot de WhatsApp para tu negocio</h2>
+      <p>Es lo que más vendo y lo que mejor funciona. Tu WhatsApp atendido las 24 horas, con tu información y tu forma de hablar.</p>
     </div>
-    <div class="rep-box reveal">
-      <button class="btn btn-ghost" id="rep-btn" style="width:100%;justify-content:center">📊 Generar el reporte de hoy</button>
-      <div class="rep-out" id="rep-out">
-        <div class="rep-line good"><b>Ventas de hoy: $487.300</b> — +12% vs. el martes pasado</div>
-        <div class="rep-line">37 tickets · promedio <b>$13.170</b> · pico 18–20 hs</div>
-        <div class="rep-line">Top del día: <b>Combo 2</b> (11 unidades)</div>
-        <div class="rep-line warn">⚠️ Stock crítico: <b>Coca 1.5L</b> — quedan 6 unidades</div>
-        <div class="rep-line">💰 Caja cuadrada · 3 pagos pendientes de acreditar</div>
-        <div class="rep-line good">Esto se arma solo con los datos de TU sistema o tus planillas.</div>
+    <div class="bot-hero">
+      <div class="bot-hero-in reveal">
+        <div class="ico">💬</div>
+        <h3>Contesta como vos, cuando vos no podés</h3>
+        <p>Se conecta a tu número de WhatsApp y aprende tu negocio: precios, stock, horarios, promos y hasta tu forma de hablar. Vos seguís usando tu WhatsApp como siempre.</p>
+        <ul class="check">
+          <li>Responde en segundos, de noche, domingos y feriados</li>
+          <li>Pasa precios, talles, stock y formas de pago sin equivocarse</li>
+          <li>Toma pedidos, reservas y turnos solo</li>
+          <li>Cuando la venta es para cerrar con vos, te la deriva con un resumen</li>
+        </ul>
+      </div>
+      <div class="bot-precio reveal">
+        <div class="bot-precio-n">$450.000<span>de implementación</span></div>
+        <div class="bot-precio-mas">+</div>
+        <div class="bot-precio-n">$75.000<span>por mes</span></div>
+        <p>Los primeros 3 meses de abono van incluidos en la implementación. 50% para arrancar, 50% cuando lo ves andando con tu info.</p>
+        <a class="btn btn-wa" href="brief.html?int=Bot%20de%20WhatsApp%20(atenci%C3%B3n%20y%20ventas)">Armá tu propuesta · 3 min</a>
+        <div class="bot-precio-pie">Andando en 7 a 10 días desde que me pasás tus datos</div>
       </div>
     </div>
   </div>
@@ -422,15 +447,37 @@ footer a{color:var(--acc-dk);font-weight:600}
   </div>
 </section>
 
-<!-- CATÁLOGO -->
+<!-- CATÁLOGO — oferta secundaria -->
 <section id="servicios" class="bg2">
   <div class="wrap">
     <div class="sec-h reveal">
-      <div class="tag">Catálogo</div>
-      <h2>¿Qué te está comiendo tiempo hoy?</h2>
-      <p>Tocá cualquier servicio para ver qué hace y un ejemplo real. El precio te lo paso cerrado en la propuesta, sin sorpresas.</p>
+      <div class="tag">Y además</div>
+      <h2>¿Qué más te está comiendo tiempo?</h2>
+      <p>Turnos, reportes, carga por foto, apps a medida. Se suman al bot o van por separado. Tocá cualquiera para ver qué hace y un ejemplo real — el precio te lo paso cerrado en la propuesta.</p>
     </div>
     <div class="grid" id="catalogo"></div>
+  </div>
+</section>
+
+<!-- DEMO REPORTE (bajado con la oferta secundaria) -->
+<section>
+  <div class="wrap">
+    <div class="sec-h reveal">
+      <div class="tag">Demo interactiva</div>
+      <h2>Tu negocio en un mensaje, todos los días</h2>
+      <p>Imaginate esto llegándote a las 20:00, sin que nadie lo arme:</p>
+    </div>
+    <div class="rep-box reveal">
+      <button class="btn btn-ghost" id="rep-btn" style="width:100%;justify-content:center">📊 Generar el reporte de hoy</button>
+      <div class="rep-out" id="rep-out">
+        <div class="rep-line good"><b>Ventas de hoy: $487.300</b> — +12% vs. el martes pasado</div>
+        <div class="rep-line">37 tickets · promedio <b>$13.170</b> · pico 18–20 hs</div>
+        <div class="rep-line">Top del día: <b>Combo 2</b> (11 unidades)</div>
+        <div class="rep-line warn">⚠️ Stock crítico: <b>Coca 1.5L</b> — quedan 6 unidades</div>
+        <div class="rep-line">💰 Caja cuadrada · 3 pagos pendientes de acreditar</div>
+        <div class="rep-line good">Esto se arma solo con los datos de TU sistema o tus planillas.</div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -498,8 +545,8 @@ footer a{color:var(--acc-dk);font-weight:600}
       <details><summary>¿Necesito saber de tecnología?</summary><p>No. Vos me contás cómo trabaja tu negocio y yo me encargo de todo: armado, conexión y capacitación para vos y tu equipo. Si lo usás por WhatsApp, no tenés que aprender nada nuevo.</p></details>
       <details><summary>¿Y si no me convence?</summary><p>Pagás 50% para arrancar y el otro 50% recién cuando lo ves funcionando en tu negocio con tus datos. El riesgo está repartido: yo no cobro completo hasta que vos no lo tengas andando.</p></details>
       <details><summary>¿Sirve para mi rubro?</summary><p>Si atendés clientes por WhatsApp, manejás stock, das turnos, cobrás o armás reportes a mano — sirve. Trabajé con sistemas para contadores, gimnasios y plataformas de juego; la base es la misma.</p></details>
-      <details><summary>¿Qué incluye el mantenimiento mensual?</summary><p>Monitoreo para que nada se caiga, ajustes cuando cambia algo en tu negocio (precios, horarios, promos) y soporte directo conmigo. Los primeros 3 meses van incluidos en la propuesta para que el sistema quede bien calibrado; después seguís solo si te sirve.</p></details>
-      <details><summary>¿Cuánto cuesta?</summary><p>Depende de qué necesites y del tamaño del laburo — por eso no vas a ver precios acá. Lo que sí te aseguro: en la llamada de 15 minutos te digo un rango honesto, y en 24 hs tenés el precio cerrado por escrito. Si no te cierra, no pasa nada.</p></details>
+      <details><summary>¿Qué incluye el abono mensual?</summary><p>Que el sistema esté funcionando: servidores, inteligencia artificial, monitoreo. Más ajustes de las respuestas del bot, actualización de precios y horarios cuando cambien, y soporte directo conmigo por WhatsApp.</p><p>Los primeros 3 meses van incluidos en el precio inicial. Después, el abono es lo que mantiene el sistema andando: el bot corre en mi infraestructura, con mi cuenta de inteligencia artificial. Si el abono se corta, el sistema deja de funcionar.</p></details>
+      <details><summary>¿Cuánto cuesta?</summary><p>El bot de WhatsApp para comercios arranca en <b>$450.000</b> de implementación + <b>$75.000 por mes</b>. Para negocios con turnos (gimnasios, consultorios, estudios) el sistema es más grande y lo cotizo a medida, igual que las apps y los reportes.</p><p>En una llamada de 15 minutos te digo el rango honesto, y en 24 hs tenés el precio cerrado por escrito.</p></details>
     </div>
   </div>
 </section>
@@ -508,12 +555,13 @@ footer a{color:var(--acc-dk);font-weight:600}
 <section class="final">
   <div class="wrap reveal">
     <h2>Contame qué te come tiempo.<br>Te digo cuánto sale automatizarlo.</h2>
-    <p>Escribile al bot ahora — te responde al toque, 24/7, y te deriva con una persona cuando hace falta.</p>
-    <a class="btn btn-wa js-wa" href="#" target="_blank" rel="noopener">
+    <p>Respondé el brief de 3 minutos y en 24 hs tenés alcance, plazo y precio cerrado por escrito.</p>
+    <a class="btn btn-wa js-wa" data-bot-vivo hidden href="#" target="_blank" rel="noopener">
       <svg class="waicon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm5.4 14.1c-.2.7-1.3 1.3-1.9 1.4-.5.1-1.1.2-3.6-.8-3-1.2-4.9-4.3-5.1-4.5-.1-.2-1.2-1.6-1.2-3.1s.8-2.2 1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5s.8 1.9.8 2-.1.4-.2.5l-.4.6c-.1.2-.3.3-.1.6.2.3.8 1.4 1.8 2.2 1.2 1.1 2.3 1.4 2.6 1.6.3.1.5.1.7-.1s.8-.9 1-1.2c.2-.3.4-.3.7-.2l2.2 1c.3.1.5.2.6.4 0 .1 0 .7-.3 1.5z"/></svg>
       🤖 Probá el bot en vivo
     </a>
-    <p style="margin-top:14px;font-size:13px;opacity:.8">o <a href="brief.html" style="font-weight:700;text-decoration:underline">armá tu propuesta en 3 min</a></p>
+    <a class="btn btn-wa" data-cta-brief href="brief.html">Armá tu propuesta · 3 min</a>
+    <p style="margin-top:14px;font-size:13px;opacity:.8">o <a class="js-wa" href="#" target="_blank" rel="noopener" style="font-weight:700;text-decoration:underline">escribime por WhatsApp</a></p>
   </div>
 </section>
 </main>
@@ -542,19 +590,38 @@ footer a{color:var(--acc-dk);font-weight:600}
 </a>
 
 <script>
-/* ===== CONFIG: poné tu número acá (formato internacional sin + ni espacios) ===== */
-var WHATSAPP = "5491172501403";
+/* ===== INTERRUPTOR DEL BOT EN VIVO =====================================
+   El worker de Render está suspendido (free tier agotado) -> los CTA que
+   mandan al bot real estan OCULTOS, no borrados.
+   Para reactivarlos cuando el worker vuelva a estar arriba:
+   poner BOT_EN_VIVO = true. Eso solo: vuelven los botones "Proba el bot
+   en vivo" (hero, cierre y demo) y los links pasan al numero del bot.
+======================================================================= */
+var BOT_EN_VIVO = false;
+
+var WHATSAPP_BOT   = "5491172501403";   /* numero del bot (WhatsApp Cloud API) */
+var WHATSAPP_VENTA = "5491125072706";   /* WhatsApp de venta de Juani */
+var WHATSAPP = BOT_EN_VIVO ? WHATSAPP_BOT : WHATSAPP_VENTA;
 var WA_TEXT = encodeURIComponent("Hola! Vi TALEFF y quiero saber más para mi negocio.");
 
 document.querySelectorAll(".js-wa").forEach(function(a){
   a.href = "https://wa.me/" + WHATSAPP + "?text=" + WA_TEXT;
 });
 
+/* botones del bot en vivo: aparecen solo si el flag esta en true */
+document.querySelectorAll("[data-bot-vivo]").forEach(function(el){
+  if(BOT_EN_VIVO) el.removeAttribute("hidden");
+});
+/* con el bot abajo, el brief es el CTA principal (verde); con el bot arriba, secundario */
+document.querySelectorAll("[data-cta-brief]").forEach(function(el){
+  el.className = "btn " + (BOT_EN_VIVO ? "btn-ghost" : "btn-wa");
+});
+
 /* ===== catálogo ===== */
 var CAT = [
   {i:"💬",t:"Bot de WhatsApp — ventas y atención",d:"Responde consultas, pasa precios, toma pedidos y deriva a humano. 24/7, entrenado con tu info.",
    det:"Se conecta a tu número de WhatsApp y aprende tu negocio: precios, stock, horarios, promos y hasta tu forma de hablar. Responde al instante cualquier día y hora, toma pedidos y reservas, y cuando detecta una consulta que necesita un humano, te la deriva con un resumen. Vos seguís usando tu WhatsApp como siempre.",
-   ej:"Un cliente escribe 23:40: «¿Tenés stock de la campera M? ¿Cuánto sale?». El bot contesta al toque con precio, foto y link de pago. Te levantás con la venta hecha y el comprobante en el chat."},
+   ej:"Un cliente escribe 23:40: «¿Tenés stock de esto? ¿Cuánto sale?» con una foto. El bot le contesta al toque con precio, variantes disponibles y link de pago. Te levantás con la venta hecha y el comprobante en el chat."},
   {i:"📅",t:"Bot de turnos y reservas",d:"Clínicas, estética, barberías, canchas. Agenda, reagenda y confirma solo.",
    det:"El bot maneja tu agenda completa: ofrece los huecos disponibles reales, agenda, reagenda y cancela. Confirma automáticamente el día anterior y avisa si se libera un lugar. La agenda la ves desde una pantalla simple en tu celu o compu; si usás Google Calendar, se integra en una segunda etapa.",
    ej:"Una paciente escribe «quiero turno para limpieza». El bot le ofrece jueves 10:30 o viernes 16:00, ella elige, queda agendada y recibe recordatorio 2 horas antes. Tu recepción atiende la mitad de llamadas que antes."},
@@ -569,7 +636,7 @@ var CAT = [
    ej:"Te piden precio por pintar 200 m². Completás metros y tipo de trabajo → PDF profesional en 1 minuto. Contestás antes que tu competencia, que lo manda «mañana sin falta»."},
   {i:"🔁",t:"Recuperador de ventas",d:"Sigue solo a los que preguntaron y no compraron. La plata que hoy se te escapa.",
    det:"Cada persona que pregunta y no compra queda registrada. A los días, el sistema le escribe solo, con contexto de lo que había preguntado. Si responde, te avisa para que cierres vos. Es la venta más barata que existe: ya te conocían.",
-   ej:"Preguntaron por la campera el martes y desaparecieron. El jueves les llega: «¿Seguís buscándola? Me queda tu talle, te la guardo hasta el viernes». De cada 10 que parecían perdidos, 2 o 3 vuelven."},
+   ej:"Preguntaron por un producto el martes y desaparecieron. El jueves les llega: «¿Seguís buscándolo? Me quedan 2, te lo guardo hasta el viernes». De cada 10 que parecían perdidos, 2 o 3 vuelven."},
   {i:"📦",t:"Control de stock con alertas",d:"Te avisa antes de quedarte sin mercadería y arma la lista de reposición.",
    det:"El sistema mira tu stock todos los días. Cuando un producto baja del mínimo que definiste, te avisa por WhatsApp y arma la lista de reposición lista para reenviar al proveedor. Funciona con tu sistema actual o con planillas.",
    ej:"«⚠️ Quedan 6 Coca 1.5L (vendés ~9 por día). Lista para el proveedor: 5 bultos Coca, 3 Fanta, 2 Sprite» — la reenviás al distribuidor y listo. Nunca más un «no me queda» en plena hora pico."},
@@ -614,6 +681,7 @@ var PARA = [
 ];
 var INT_MAP = ["Bot de WhatsApp (atención y ventas)","Turnos y reservas","Recordatorios y cobranzas","Reportes automáticos","Presupuestos automáticos","Recuperador de ventas","Control de stock","","App a medida / dashboard","App a medida / dashboard","Conectar sistemas","Carga por foto (OCR)","Reseñas automáticas","Capacitación IA"];
 document.getElementById("catalogo").innerHTML = CAT.map(function(c,ix){
+  if(ix===0) return "";
   return '<div class="svc reveal" data-ix="'+ix+'"><div class="ico">'+c.i+'</div><h3>'+c.t+'</h3><p>'+c.d+'</p><div class="svc-para"><b>Para:</b> '+PARA[ix]+'</div><div class="vermas">Ver detalle y ejemplo →</div></div>';
 }).join("");
 document.querySelectorAll(".svc").forEach(function(el){
@@ -647,7 +715,10 @@ document.addEventListener("keydown",function(e){ if(e.key==="Escape")cerrarModal
   var ix=parseInt(s,10)-1;
   if(s && CAT[ix]){
     setTimeout(function(){
-      try{ document.getElementById("servicios").scrollIntoView(); }catch(_e){}
+      try{
+        var dest=document.querySelector('.svc[data-ix="'+ix+'"]') || document.getElementById(ix===0?"bot":"servicios");
+        if(dest) dest.scrollIntoView();
+      }catch(_e){}
       abrirModal(ix);
     },350);
   }
@@ -677,13 +748,14 @@ var FLOWS = {
       conf:{user:"Jueves 10:30",bot:["Confirmado ✅ Jueves 10:30 con la Dra. López.","Te llega recordatorio el día anterior y 2 hs antes. ¡Hasta el jueves! 😊"],final:true}
     }},
   tienda: { av:"TM", nm:"Tienda Mía", start:{
-    bot:["¡Hola! 🛍 Soy el asistente de Tienda Mía.","¿Qué estás buscando?"],
-    opts:[["👟 ¿Tienen stock de...?","stock"],["🚚 Envíos y pagos","envios"],["🛒 Hacer un pedido","pedido"]] },
+    bot:["¡Hola! 🛍 Soy el asistente de Tienda Mía. Contesto al toque, también fuera de horario.","¿Qué estás buscando?"],
+    opts:[["🔎 ¿Tenés stock de esto?","stock"],["🚚 Envíos y pagos","envios"],["🕐 Horarios y dirección","horarios"]] },
     nodes:{
-      stock:{user:"👟 ¿Tienen stock de zapatillas?",bot:["¡Sí! Me quedan estos talles del modelo Runner: 38, 40 y 42.","$89.900 · 3 cuotas sin interés. ¿Te reservo un par?"],opts:[["🛒 Sí, talle 40","conf"],["🚚 Ver envíos","envios"]]},
-      envios:{user:"🚚 Envíos y pagos",bot:["Envío gratis en el día dentro de la ciudad 🚀 Al interior, 48 hs por Andreani.","Aceptamos transferencia, débito, crédito (3 cuotas s/interés) y Mercado Pago."],opts:[["🛒 Hacer un pedido","pedido"]]},
-      pedido:{user:"🛒 Hacer un pedido",bot:["¡Dale! Decime qué producto y te paso el link de pago en este mismo chat.","(El bot arma el pedido y cobra solo, sin que nadie toque nada)"],opts:[["🛒 Runner talle 40","conf"]]},
-      conf:{user:"🛒 Runner talle 40",bot:["¡Reservado! ✅ Te dejo el link de pago: pago.tienda/abc123","Apenas pagues te confirmo el envío para hoy mismo. ¡Gracias! 🙌"],final:true}
+      stock:{user:"🔎 ¿Tenés stock de esto?",bot:["¡Sí! Me quedan 4 unidades. Te paso foto, precio y las variantes que hay 📸","$89.900 · 3 cuotas sin interés. ¿Te lo reservo?"],opts:[["🛒 Sí, reservámelo","conf"],["🚚 ¿Hacen envíos?","envios"]]},
+      envios:{user:"🚚 Envíos y pagos",bot:["Envío gratis en el día dentro de la ciudad 🚀 Al interior, 48 hs por Andreani.","Aceptamos transferencia, débito, crédito (3 cuotas s/interés) y Mercado Pago."],opts:[["🛒 Quiero hacer un pedido","pedido"],["🕐 Ver horarios","horarios"]]},
+      horarios:{user:"🕐 Horarios y dirección",bot:["Lunes a sábado de 10 a 20 hs, en Av. Siempreviva 742.","Y si no llegás, te lo mando a domicilio. ¿Buscás algo puntual?"],opts:[["🔎 Sí, ¿tenés stock?","stock"]]},
+      pedido:{user:"🛒 Quiero hacer un pedido",bot:["¡Dale! Decime cuál y te paso el link de pago en este mismo chat.","(El bot arma el pedido y cobra solo, sin que nadie toque nada)"],opts:[["🛒 El que me mostraste","conf"]]},
+      conf:{user:"🛒 Sí, reservámelo",bot:["¡Reservado! ✅ Te dejo el link de pago: pago.tienda/abc123","Apenas pagues te confirmo el envío para hoy mismo. ¡Gracias! 🙌"],final:true}
     }},
   delivery: { av:"LN", nm:"La Nonna Pizzas", start:{
     bot:["¡Buenas! 🍕 Soy el asistente de La Nonna. Tomo pedidos aunque el local esté a full.","¿Qué te tienta hoy?"],
@@ -736,8 +808,13 @@ function mostrarOpts(opts,final){
   });
   if(final){
     var cta=document.createElement("button"); cta.className="cta-final";
-    cta.textContent="🤖 Probá el bot REAL en vivo";
-    cta.onclick=function(){ window.open("https://wa.me/"+WHATSAPP+"?text="+encodeURIComponent("Hola! Probé la demo en taleff y quiero ver el bot real para mi negocio."),"_blank"); };
+    if(BOT_EN_VIVO){
+      cta.textContent="🤖 Probá el bot REAL en vivo";
+      cta.onclick=function(){ window.open("https://wa.me/"+WHATSAPP_BOT+"?text="+encodeURIComponent("Hola! Probé la demo en taleff y quiero ver el bot real para mi negocio."),"_blank"); };
+    }else{
+      cta.textContent="📋 Quiero uno así para mi negocio";
+      cta.onclick=function(){ window.location.href="brief.html?int="+encodeURIComponent("Bot de WhatsApp (atención y ventas)"); };
+    }
     optsEl.appendChild(cta);
     var re=document.createElement("button"); re.textContent="↻ Probar de nuevo";
     re.onclick=function(){ iniciarFlow(curFlow); };
